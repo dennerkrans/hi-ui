@@ -31,8 +31,10 @@ jobs:
         uses: denoland/setup-deno@v2.0.2
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install dependencies
+        run: deno install
       - name: Build
-        run: deno run build
+        run: deno task build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
