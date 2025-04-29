@@ -1,0 +1,63 @@
+/* src/reset.css - Basic Modern CSS Reset (2025) */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin and padding on common elements using :where() for low specificity. */
+:where(body, h1, h2, h3, h4, h5, h6, p, figure, figcaption, blockquote, dl, dd, ul, ol) {
+	margin: 0;
+	padding: 0;
+}
+
+/* Allow percentage-based heights in the application. */
+html,
+body {
+	height: 100%;
+}
+
+/* Improve text rendering. */
+body {
+	line-height: 1.5; /* Sensible default line height */
+	-webkit-font-smoothing: antialiased; /* Optional: Improves text rendering on some screens */
+	-moz-osx-font-smoothing: grayscale; /* Optional: Improves text rendering on some screens */
+}
+
+/* Improve media defaults. */
+:where(img, picture, video, canvas, svg) {
+	display: block; /* Remove baseline alignment issues */
+	max-width: 100%; /* Make images responsive by default */
+}
+
+/* Remove built-in form typography styles */
+:where(input, button, textarea, select) {
+	font: inherit;
+}
+
+/* Avoid text overflows */
+:where(p, h1, h2, h3, h4, h5, h6) {
+	overflow-wrap: break-word;
+}
+
+/* Reset button styles (very basic) */
+:where(button) {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	color: inherit;
+}
+
+/* Optional: Remove default list styles */
+/* Consider if you want to remove these globally or style lists specifically where needed. */
+/* :where(ul[role='list'], ol[role='list']) { */
+/* list-style: none; */
+/* } */
+
+/* Optional: Make sure root stacking context is created (can help with z-index issues) */
+/* Useful if you heavily use position/z-index. */
+/* #root, #__next, #svelte { */
+/* isolation: isolate; */
+/* } */
